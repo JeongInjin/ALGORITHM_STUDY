@@ -1,6 +1,7 @@
-package Study;
+package Study.s1;
 
-
+//적어도 하나의 base case, 즉 순환되지 않고 종료되는 case가 있어야 함.
+//모든 case는 결국 base case 수렴해야 함.
 public class Recursion {
     public static void main(String[] args){
         int result1 = factorial(4);
