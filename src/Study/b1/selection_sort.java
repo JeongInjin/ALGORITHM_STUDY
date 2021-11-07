@@ -18,17 +18,20 @@ public class selection_sort {
     private static void selectionSort(int[] array){
         for(int i = 0 ; i < array.length ; i++){
             int minIndex = i; // 선택할 가장 작은 수의 인덱스
-            for(int k = i ; k < array.length - 1 ; k++){
-                if(array[i] > array[k+1]){ // 더 작은 값을 찾은경우 해당 인덱스를 저장한다
-                    minIndex = k+1;
+            for(int k = i ; k < array.length ; k++){
+                if(array[i] > array[k]){ // 더 작은 값을 찾은경우 해당 인덱스를 저장한다
+                    minIndex = k;
                 }
             }
-            if(i != minIndex){ // 최소값을 기대했던 인덱스와 다른 인덱스로 교환 되었다면 스왑한다.
-                int temp = array[i];
-                array[i] = array[minIndex];
-                array[minIndex] = temp;
+            if(minIndex != i){
+                swapValue(array, i, minIndex);
             }
             System.out.println(i + " 회차 " + Arrays.toString(array));
         }
+    }
+    private static void swapValue(int[] arr, int i, int k){
+        int tmp = arr[i];
+        arr[i] = arr[k];
+        arr[k] = tmp;
     }
 }

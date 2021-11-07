@@ -17,15 +17,16 @@ public class insertion_sort {
 
     private static void insertionSort(int[] array) {
         for(int i = 1 ; i < array.length ; i++){
-            int standard = array[i]; // 기준이 될 숫자
-            int compare  = i - 1 ; // 비교할 숫자
+            int stdValue = array[i]; // 기준이 될 숫자
+            int compareIndex  = i - 1 ; // 비교할 숫자
 
-            while(compare >= 0 && standard < array[compare]){ // 55(1) < 65(0)
-                array[compare + 1] = array[compare];
-                compare--;
+            while(compareIndex >= 0 && stdValue < array[compareIndex]){ // 55(1) < 65(0)
+                array[compareIndex + 1] = array[compareIndex];
+                compareIndex--;
             }
-            array[compare + 1] = standard;
+            array[compareIndex + 1] = stdValue;
             System.out.println(i + " 회차 " + Arrays.toString(array));
         }
+        System.out.println("최종 정렬 : " + Arrays.toString(array));
     }
 }
