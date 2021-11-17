@@ -1,4 +1,4 @@
-package infcode.secssion1_String;
+package infcode.secssion3_twoPoint_SlidingWindow;
 
 import java.util.Scanner;
 
@@ -15,10 +15,15 @@ public class quiz_3_4_Main {
     }
     public static int solution(int n, int t, int[] a){
         int answer = 0;
-        int rt = 0, lt = 0;
-
-        for(int i = 0; i < n; i++){
-
+        int lt = 0;
+        int sum = 0;
+        for(int rt = 0; rt < n; rt++){
+            sum += a[rt];
+            if(sum == t) answer++;
+            while (sum >= t){
+                sum -= a[lt++];
+                if(sum == t) answer++;
+            }
         }
         return answer;
     }

@@ -1,11 +1,10 @@
-package infcode.secssion1_String;
+package infcode.secssion3_twoPoint_SlidingWindow;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class quiz_3_2_Main {
+public class quiz_3_1_Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -23,15 +22,12 @@ public class quiz_3_2_Main {
     public static List<Integer> solution(int n, int m, int[] a, int[] b){
         List<Integer> answer = new ArrayList<>();
         int p1 = 0, p2 = 0;
-        Arrays.sort(a);
-        Arrays.sort(b);
         while(p1 < n && p2 < m){
-            if(a[p1] == b[p2]){
-                answer.add(a[p1++]);
-                p2++;
-            }else if(a[p1] < b[p2]) p1++;
-            else p2++;
+            if(a[p1] < b[p2]) answer.add(a[p1++]);
+            else answer.add(b[p2++]);
         }
+        while (p1 < n) answer.add(a[p1++]);
+        while (p2 < m) answer.add(b[p2++]);
         return answer;
     }
 }

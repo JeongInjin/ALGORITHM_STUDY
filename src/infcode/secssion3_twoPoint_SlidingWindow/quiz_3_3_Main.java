@@ -1,4 +1,4 @@
-package infcode.secssion1_String;
+package infcode.secssion3_twoPoint_SlidingWindow;
 
 import java.util.Scanner;
 

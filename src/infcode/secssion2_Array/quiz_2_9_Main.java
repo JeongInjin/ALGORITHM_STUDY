@@ -1,8 +1,8 @@
-package infcode.secssion1_String;
+package infcode.secssion2_Array;
 
 import java.util.Scanner;
 
-public class quiz2_9_Main {
+public class quiz_2_9_Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

@@ -2,7 +2,7 @@ package infcode.secssion1_String;
 
 import java.util.Scanner;
 
-public class quiz5_Main {
+public class quiz_1_5_Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String str=sc.next();
