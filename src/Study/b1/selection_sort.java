@@ -12,14 +12,15 @@ import java.util.Arrays;
 * */
 public class selection_sort {
     public static void main(String[] args){
-        int[] array = {65, 55, 45, 33, 21, 56, 77, 12}; // 테스트 값
+        //int[] array = {65, 55, 45, 33, 21, 56, 77, 12}; // 테스트 값
+        int[] array = {3, 7, 1, 5, 4, 2, 9, 8, 6}; // 테스트 값
         selectionSort(array);
     }
     private static void selectionSort(int[] array){
         for(int i = 0 ; i < array.length ; i++){
             int minIndex = i; // 선택할 가장 작은 수의 인덱스
             for(int k = i ; k < array.length ; k++){
-                if(array[i] > array[k]){ // 더 작은 값을 찾은경우 해당 인덱스를 저장한다
+                if(array[minIndex] > array[k]){ // 더 작은 값을 찾은경우 해당 인덱스를 저장한다
                     minIndex = k;
                 }
             }

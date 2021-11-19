@@ -22,30 +22,24 @@ public class quiz_5_3_Main {
 
     private static int solution(int n, int[][] arr, int[] moves) {
         int answer = 0;
-        // 1 5 3 5 1 2 1 4
         Stack<Integer> stack = new Stack<>();
         for(int pick : moves){
             for(int i = 0; i < n; i++){
-                if(arr[pick-1][i] != 0){
+                if(arr[i][pick-1] != 0){
+                    int compare = arr[i][pick-1];
                     if(!stack.isEmpty()){
-                        int compare = arr[pick-1][i];
-                        while (stack.peek() == compare){
+                        if(stack.peek() == compare){
                             answer ++;
                             stack.pop();
-                        }
-                        if(stack.peek() == arr[pick-1][i]);
-
+                        }else stack.push(compare);
                     }else{
-                        stack.push(arr[pick-1][i]);
+                        stack.push(compare);
                     }
-                    arr[pick-1][i] = 0;
+                    arr[i][pick-1] = 0;
                     break;
                 }
             }
         }
-        return answer;
-    }
-    private static void stackCheck(){
-
+        return answer * 2;
     }
 }
