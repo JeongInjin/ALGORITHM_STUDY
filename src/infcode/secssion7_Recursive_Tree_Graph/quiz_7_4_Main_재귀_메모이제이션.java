@@ -55,7 +55,7 @@ import java.util.Scanner;
 /*
  * 2차개션 - 메모리제이션
  * */
-public class quiz_7_4_Main {
+public class quiz_7_4_Main_재귀_메모이제이션 {
     static int[] fibo;
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);

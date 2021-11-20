@@ -1,7 +1,5 @@
 package infcode.secssion7_Recursive_Tree_Graph;
 
-import java.util.Scanner;
-
 /*
 이진트리 순회(깊이우선탐색)
 아래 그림과 같은 이진트리를 전위순회와 후위순회를 연습해보세요.
@@ -13,7 +11,7 @@ import java.util.Scanner;
 후위순회 출력 : 4 5 2 6 7 3 1 - 왼쪽 자식(기준) -> 오른쪽 자식 -> 부모
 */
 
-public class quiz_7_5_Main {
+public class quiz_7_5_Main_DFS {
     static class Node{
         int data;
         Node lt, rt;
@@ -25,7 +23,7 @@ public class quiz_7_5_Main {
     private Node root;
 
     public static void main(String[] args){
-        quiz_7_5_Main tree = new quiz_7_5_Main();
+        quiz_7_5_Main_DFS tree = new quiz_7_5_Main_DFS();
         tree.root = new Node(1);
         tree.root. lt = new Node(2);
         tree.root.rt = new Node(3);

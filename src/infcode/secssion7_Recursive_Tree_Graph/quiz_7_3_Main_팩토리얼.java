@@ -17,7 +17,7 @@ import java.util.Scanner;
 */
 
 
-public class quiz_7_3_Main {
+public class quiz_7_3_Main_팩토리얼 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

@@ -12,7 +12,7 @@ import java.util.Queue;
 
 레벨 탐색 순회 출력 : 1 2 3 4 5 6 7
 */
-public class quiz_7_7_Breadth_First_Search {
+public class quiz_7_8_Breadth_First_Search_송아지찾기 {
     static class Node{
         int data;
         Node lt, rt;
@@ -24,7 +24,7 @@ public class quiz_7_7_Breadth_First_Search {
     private Node root;
 
     public static void main(String[] args){
-        quiz_7_7_Breadth_First_Search tree = new quiz_7_7_Breadth_First_Search();
+        quiz_7_8_Breadth_First_Search_송아지찾기 tree = new quiz_7_8_Breadth_First_Search_송아지찾기();
         tree.root = new Node(1);
         tree.root.lt = new Node(2);
         tree.root.rt = new Node(3);

@@ -18,7 +18,7 @@ import java.util.Scanner;
 1 2 3
 */
 
-public class quiz_7_1_Main {
+public class quiz_7_1_Main_재귀함수_스택프레임 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

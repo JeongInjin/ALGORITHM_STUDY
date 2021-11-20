@@ -20,7 +20,7 @@ package infcode.secssion7_Recursive_Tree_Graph;
 2
 3
 */
-public class quiz_7_6_Main {
+public class quiz_7_6_Main_BFS {
     static int n;
     static int[] ch;
 
