@@ -18,17 +18,56 @@ import java.util.Scanner;
 1 1 2 3 5 8 13 21 34 55
 */
 
+/*배열을 이용한 일반 피보나치*/
+//public class quiz_7_4_Main {
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        for(int i = 1; i <= n; i++) System.out.print(recursive(i) + " ");
+//    }
+//
+//    public static int recursive(int n){
+//        if(n <= 1) return n;
+//
+//        return recursive(n - 1) + recursive( n - 2);
+//    }
+//}
 
-public class quiz_7_4_Main {
+/*
+* 1차개션
+* */
+/*public class quiz_7_4_Main {
+    static int[] fibo;
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        for(int i = 1; i <= n; i++) System.out.print(recursive(i) + " ");
+        fibo = new int[n+1];
+        recursive(n);
+        for(int i = 1; i <= n; i++) System.out.print(fibo[i] + " ");
     }
 
     public static int recursive(int n){
-        if(n <= 1) return n;
+        if(n <= 2) return fibo[n] = 1;
+        return fibo[n] = recursive(n-2) + recursive(n-1);
+    }
+}*/
 
-        return recursive(n - 1) + recursive( n - 2);
+/*
+ * 2차개션 - 메모리제이션
+ * */
+public class quiz_7_4_Main {
+    static int[] fibo;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        fibo = new int[n+1];
+        recursive(n);
+        for(int i = 1; i <= n; i++) System.out.print(fibo[i] + " ");
+    }
+
+    public static int recursive(int n){
+        if(fibo[n] >0) return fibo[n];
+        if(n <= 2) return fibo[n] = 1;
+        return fibo[n] = recursive(n-2) + recursive(n-1);
     }
 }
