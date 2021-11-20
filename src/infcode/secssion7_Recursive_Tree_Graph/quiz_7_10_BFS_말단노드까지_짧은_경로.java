@@ -2,7 +2,6 @@ package infcode.secssion7_Recursive_Tree_Graph;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 /*
 Tree 말단 노드까지의 가장 짧은 경로 - DFS ->최소 거리는 BFS 로 풀어야함. 연습용임.
@@ -15,7 +14,7 @@ Tree 말단 노드까지의 가장 짧은 경로 - DFS ->최소 거리는 BFS �
   4 5
 가장 짧은 길이는 3번 노느까지의 길이인 1이다
 */
-public class quiz_7_9_DFS_말단노드까지_짧은_경로 {
+public class quiz_7_10_BFS_말단노드까지_짧은_경로 {
     static class Node{
         int data;
         Node lt, rt;
@@ -27,19 +26,30 @@ public class quiz_7_9_DFS_말단노드까지_짧은_경로 {
     static Node root;
 
     public static void main(String[] args){
-        quiz_7_9_DFS_말단노드까지_짧은_경로 tree = new quiz_7_9_DFS_말단노드까지_짧은_경로();
+        quiz_7_10_BFS_말단노드까지_짧은_경로 tree = new quiz_7_10_BFS_말단노드까지_짧은_경로();
         tree.root=new Node(1);
         tree.root.lt=new Node(2);
         tree.root.rt=new Node(3);
         tree.root.lt.lt=new Node(4);
         tree.root.lt.rt=new Node(5);
-        System.out.println(DFS(0, tree.root));
+        System.out.println(BFS(tree.root));
     }
 
-    private static int DFS(int L, Node root) {
-        if(root.lt == null && root.rt == null) return L;
-
-        return Math.min(DFS(L + 1, root.lt), DFS(L + 1, root.rt));
+    private static int BFS(Node root) {
+        Queue<Node> Q = new LinkedList<>();
+        Q.offer(root);
+        int L = 0;
+        while(!Q.isEmpty()){
+            int len = Q.size();
+            for(int i = 0; i < len; i++){
+                Node cur = Q.poll();
+                if(cur.lt == null && cur.rt == null) return L;
+                if(cur.lt != null) Q.offer(cur.lt);
+                if(cur.rt != null) Q.offer(cur.rt);
+            }
+            L++;
+        }
+        return -1;
     }
 
 }
