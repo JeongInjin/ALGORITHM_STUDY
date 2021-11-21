@@ -1,0 +1,48 @@
+package infcode.secssion8_DFS_BFS_활용;
+
+import java.util.Scanner;
+
+/*
+중복순열 구하기
+1부터 N까지 번호가 적힌 구슬이 있습니다. 이 중 중복을 허락하여 M번을 뽑아 일렬로 나열
+하는 방법을 모두 출력합니다.
+▣ 입력설명
+첫 번째 줄에 자연수 N(3<=N<=10)과 M(2<=M<=N) 이 주어집니다.
+▣ 출력설명
+첫 번째 줄에 결과를 출력합니다.
+출력순서는 사전순으로 오름차순으로 출력합니다.
+▣ 입력예제 1
+3 2
+▣ 출력예제 1
+1 1
+1 2
+1 3
+2 1
+2 2
+2 3
+3 1
+3 2
+3 3
+ */
+public class 중복순열구하기 {
+    static int n, m;
+    static int[] ch;
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        n = kb.nextInt();
+        m = kb.nextInt();
+        ch = new int[n+1];
+        DFS(n, m);
+    }
+
+    private static void DFS(int n, int m) {
+        if(n > m) return;
+        else{
+            if(ch[n] != n){
+                System.out.println(n + " " + ch[n]);
+                ch[n]++;
+            }
+            DFS(n,m);
+        }
+    }
+}
