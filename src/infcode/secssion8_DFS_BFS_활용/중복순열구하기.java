@@ -26,23 +26,25 @@ import java.util.Scanner;
  */
 public class 중복순열구하기 {
     static int n, m;
-    static int[] ch;
+    static int[] pm;
     public static void main(String[] args){
         Scanner kb = new Scanner(System.in);
         n = kb.nextInt();
         m = kb.nextInt();
-        ch = new int[n+1];
-        DFS(n, m);
+        pm = new int[m];
+        DFS(0);
     }
 
-    private static void DFS(int n, int m) {
-        if(n > m) return;
+    private static void DFS(int L) {
+        if(L == m){
+            for(int x : pm) System.out.print(x + " ");
+            System.out.println();
+        }
         else{
-            if(ch[n] != n){
-                System.out.println(n + " " + ch[n]);
-                ch[n]++;
+            for(int i = 1; i <= n; i++){
+                pm[L] = i;
+                DFS(L + 1);
             }
-            DFS(n,m);
         }
     }
 }

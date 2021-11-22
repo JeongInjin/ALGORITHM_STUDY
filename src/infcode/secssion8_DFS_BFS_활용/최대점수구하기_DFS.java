@@ -23,7 +23,7 @@ import java.util.Scanner;
 41
  */
 public class 최대점수구하기_DFS {
-    static int answer = 0;
+    static int answer = Integer.MIN_VALUE;
     static int n, m;
     static boolean flag = false;
     public static void main(String[] args){
