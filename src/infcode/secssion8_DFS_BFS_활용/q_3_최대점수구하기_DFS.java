@@ -22,7 +22,7 @@ import java.util.Scanner;
 ▣ 출력예제 1
 41
  */
-public class 최대점수구하기_DFS {
+public class q_3_최대점수구하기_DFS {
     static int answer = Integer.MIN_VALUE;
     static int n, m;
     static boolean flag = false;

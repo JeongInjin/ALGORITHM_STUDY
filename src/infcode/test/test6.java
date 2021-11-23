@@ -3,7 +3,7 @@ package infcode.test;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-
+// 5C3
 public class test6 {
     static int total, n;
     static int answer = Integer.MAX_VALUE;

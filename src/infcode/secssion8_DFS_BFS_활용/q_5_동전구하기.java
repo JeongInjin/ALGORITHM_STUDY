@@ -32,7 +32,7 @@ import java.util.Scanner;
 
 3
  */
-public class 동전구하기 {
+public class q_5_동전구하기 {
     static int n, m;
     static int answer = Integer.MAX_VALUE;
     public static void main(String[] args){

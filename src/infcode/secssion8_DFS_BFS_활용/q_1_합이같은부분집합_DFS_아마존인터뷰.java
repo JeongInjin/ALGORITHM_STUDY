@@ -32,7 +32,7 @@ N개의 원소로 구성된 자연수 집합이 주어지면, 이 집합을 두 
 예시 출력 1
 YES
 * */
-public class 합이같은부분집합_DFS_아마존인터뷰 {
+public class q_1_합이같은부분집합_DFS_아마존인터뷰 {
     static String answer = "NO";
     static int n, total = 0;
     static boolean flag = false;

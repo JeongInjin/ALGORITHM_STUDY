@@ -35,7 +35,7 @@ N마리의 바둑이와 각 바둑이의 무게 W가 주어지면, 철수가 트
 
 242
 * */
-public class 바둑이승차_DFS {
+public class q_2_바둑이승차_DFS {
     static int answer = 0;
     static int n, total;
     public static void main(String[] args){

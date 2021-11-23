@@ -24,7 +24,7 @@ import java.util.Scanner;
 3 2
 3 3
  */
-public class 중복순열구하기 {
+public class q_4_중복순열구하기 {
     static int n, m;
     static int[] pm;
     public static void main(String[] args){
