@@ -47,7 +47,5 @@ public class quick_sort {
         System.out.println(" 정렬전 " + Arrays.toString(arr));
         quickSort(arr, 0, arr.length - 1);
         System.out.println(" 정렬후 " + Arrays.toString(arr));
-
-
     }
 }
