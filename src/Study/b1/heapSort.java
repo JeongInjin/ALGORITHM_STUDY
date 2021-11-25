@@ -33,7 +33,7 @@ public class heapSort {
         heapSort(arr);
         System.out.println(" 정렬후 " + Arrays.toString(arr));
 
-        int[] arr_bottomUp = {3,4,1,5,2}; // 테스트 값
+        int[] arr_bottomUp = {7,3,4,6,8,1,5,2}; // 테스트 값
         System.out.println(" heapSort bottom-Up 정렬전 " + Arrays.toString(arr_bottomUp));
         heapSort_bottom_up(arr_bottomUp);
         System.out.println(" heapSort bottom-Up 정렬후 " + Arrays.toString(arr_bottomUp));
@@ -122,7 +122,7 @@ public class heapSort {
             heapify_maxHeap(arr, i, size -1);
         }
 
-        for(int i = size-1; i > 0; i--){
+        for(int i = size-1; i >= 0; i--){
             swap(arr, 0, i);
             heapify_maxHeap(arr, 0, i - 1);
         }
