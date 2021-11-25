@@ -32,6 +32,11 @@ public class heapSort {
         System.out.println(" 정렬전 " + Arrays.toString(arr));
         heapSort(arr);
         System.out.println(" 정렬후 " + Arrays.toString(arr));
+
+        int[] arr_bottomUp = {3,4,1,5,2}; // 테스트 값
+        System.out.println(" heapSort bottom-Up 정렬전 " + Arrays.toString(arr_bottomUp));
+        heapSort_bottom_up(arr_bottomUp);
+        System.out.println(" heapSort bottom-Up 정렬후 " + Arrays.toString(arr_bottomUp));
     }
 
     //콜렉션 프레임워크를 이용한 힙정렬
@@ -50,6 +55,7 @@ public class heapSort {
         System.out.println(" PriorityQueue큐 정렬후 " + Arrays.toString(newArr));
     }
 
+    /*Top-Bottom 방식은 마지막에 재귀를 또다시 호출하기 때문에 비효율적임.*/
     private static void heapSort(int[] arr){
         //size가 0 또는 1일경우 return
         if(arr.length < 2) return;
@@ -96,5 +102,72 @@ public class heapSort {
         int temp = heap[i];
         heap[i] = heap[k];
         heap[k] = temp;
+    }
+
+
+    // 상향식 힙정렬
+    private static void heapSort_bottom_up(int[] arr){
+        int size = arr.length;
+        if(size < 2) return;
+
+        /*
+         * left child node = index * 2 + 1
+         * right child node = index * 2 + 2
+         * parent node = (index - 1) / 2
+         */
+        //가장 마지막 요소의 부모 인덱스
+        int parentIndex = ((size -1) -1) / 2;
+        //max heap
+        for(int i = parentIndex; i >= 0; i--){
+            heapify_maxHeap(arr, i, size -1);
+        }
+
+        for(int i = size-1; i > 0; i--){
+            swap(arr, 0, i);
+            heapify_maxHeap(arr, 0, i - 1);
+        }
+    }
+    private static void heapify_maxHeap(int[] arr, int parentIndex, int lastIndex){
+        int leftChildindex;
+        int rightChildindex;
+        int largestIndex;
+        /*
+        현재 부모 인덱스의 자식 노드 인덱스가
+        마지막 엔득스를 넘지 않을 때 까지 반복한다.
+        이 때 왼쪽 자식 노드를 기준으로 범위를 검사하게 되면
+        마지막 부모 인덱스가 왼쪽 자식만 갖고 있을 경우
+        왼쪽 자식노드와는 비교 및 교환을 할 수 없기 때문이다.
+         */
+        while ((parentIndex * 2) + 1 <= lastIndex){
+            leftChildindex = (parentIndex * 2) + 1;
+            rightChildindex = (parentIndex * 2) + 2;
+            largestIndex = parentIndex;
+
+            /*
+             * left child node와 비교
+             * (범위는 while문에서 검사했으므로 별도 검사 필요 없음)
+             */
+            if(arr[leftChildindex] > arr[largestIndex]){
+                largestIndex = leftChildindex;
+            }
+            /*
+             * right child node와 비교
+             * right child node는 범위를 검사해주어야한다.
+             */
+            if(rightChildindex <= lastIndex && arr[rightChildindex] > arr[largestIndex]){
+                largestIndex = rightChildindex;
+            }
+            /*
+             * 교환이 발생했을 경우 두 원소를 교체 한 후
+             * 교환이 된 자식노드를 부모 노드가 되도록 교체한다.
+             */
+            if(largestIndex != parentIndex){
+                swap(arr, parentIndex, largestIndex);
+                parentIndex = largestIndex;
+            }else{
+                return;
+            }
+
+        }
     }
 }
