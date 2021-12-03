@@ -16,9 +16,7 @@ public class quiz_1_8_Main_팰린드룸 {
         //if(str.toUpperCase().replaceAll("[^A-Z]", "").equals(compare)) answer = "YES";
 
         //문자열로 넘어온 팰린더룸 체크 for를 이용함
-        int mid = str.length() / 2;
-
-        for(int i = 0; i < mid; i++){
+        for(int i = 0; i < str.length() / 2; i++){
             if(str.charAt(i) != str.charAt(str.length() - i - 1))
                 return answer;
         }
