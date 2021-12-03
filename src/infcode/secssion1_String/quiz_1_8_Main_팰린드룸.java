@@ -1,0 +1,28 @@
+package infcode.secssion1_String;
+
+import java.util.Scanner;
+/*
+팰린들룸
+ */
+public class quiz_1_8_Main_팰린드룸 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.print(solution(str));
+    }
+    public static String solution(String str){
+        String answer = "NO";
+        //String compare = String.valueOf(new StringBuilder(str).reverse()).toUpperCase().replaceAll("[^A-Z]","");
+        //if(str.toUpperCase().replaceAll("[^A-Z]", "").equals(compare)) answer = "YES";
+
+        //문자열로 넘어온 팰린더룸 체크 for를 이용함
+        int mid = str.length() / 2;
+
+        for(int i = 0; i < mid; i++){
+            if(str.charAt(i) != str.charAt(str.length() - i - 1))
+                return answer;
+        }
+
+        return answer;
+    }
+}
