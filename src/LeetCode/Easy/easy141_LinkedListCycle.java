@@ -40,11 +40,11 @@ public class easy141_LinkedListCycle {
      * }
      */
     public class Solution {
-        public boolean hasCycle(easy21_MergeTwoSortedLists.ListNode head) {
+        public boolean hasCycle(ListNode head) {
             if(head == null || head.next == null) return false;
 
-            easy21_MergeTwoSortedLists.ListNode turtle = head;
-            easy21_MergeTwoSortedLists.ListNode rabbit = head.next;
+            ListNode turtle = head;
+            ListNode rabbit = head.next;
 
             while(rabbit != null && rabbit.next  != null){
                 if(turtle == rabbit) return true;

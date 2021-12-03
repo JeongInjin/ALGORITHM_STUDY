@@ -15,10 +15,10 @@ public class easy160_IntersectionofTwoLinkedLists {
      * }
      */
     public class Solution {
-        public easy21_MergeTwoSortedLists.ListNode getIntersectionNode(easy21_MergeTwoSortedLists.ListNode headA, easy21_MergeTwoSortedLists.ListNode headB) {
-            HashSet<easy21_MergeTwoSortedLists.ListNode> hs = new HashSet<>();
+        public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+            HashSet<ListNode> hs = new HashSet<>();
 
-            easy21_MergeTwoSortedLists.ListNode t = headA;
+            ListNode t = headA;
             while(t != null){
                 hs.add(t);
                 t = t.next;
