@@ -39,26 +39,26 @@ public class easy35_SearchInsertPosition {
             nums[i] = sc.nextInt();
         }
         int target = sc.nextInt();
-        Solution solution = new Solution();
-        System.out.println(solution.searchInsert(nums, target));
+        System.out.println(Solution.searchInsert(nums, target));
     }
+    static class Solution {
+        public static int searchInsert(int[] nums, int target) {
+            int answer = -1;
+            int mid = -1;
+            int low = 0;
+            int high = nums.length - 1;
+            int failCheck = -1;
+            while (low <= high){
+                mid = (low + high) / 2;
+                if(target == nums[mid]) return mid;
+                else if(target < nums[mid]) high = mid - 1;
+                else low = mid + 1;
+            }
+            if(low > high) return high + 1;
 
-}
-class Solution {
-    public int searchInsert(int[] nums, int target) {
-        int answer = -1;
-        int mid = -1;
-        int low = 0;
-        int high = nums.length - 1;
-        int failCheck = -1;
-        while (low <= high){
-            mid = (low + high) / 2;
-            if(target == nums[mid]) return mid;
-            else if(target < nums[mid]) high = mid - 1;
-            else low = mid + 1;
+            return answer;
         }
-        if(low > high) return high + 1;
-
-        return answer;
     }
+
 }
+
