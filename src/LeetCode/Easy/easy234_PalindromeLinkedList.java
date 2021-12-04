@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class easy234_PalindromeLinkedList {
+
+
     /**
      * Definition for singly-linked list.
      * public class ListNode {
