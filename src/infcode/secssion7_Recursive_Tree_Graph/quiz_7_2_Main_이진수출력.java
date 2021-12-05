@@ -33,4 +33,20 @@ public class quiz_7_2_Main_이진수출력 {
         recursive(n / 2);
         System.out.print(n % 2);
     }
+    //이진수 구하기
+    /*
+    int[] b = new int[10];
+        int i = 0;
+        while(N != 1){
+            b[i++] = N % 2;
+            N = N / 2;
+        }
+        b[i] = N;
+
+        for(int k = i; k >= 0; k--){
+            System.out.print(b[k]);
+        }
+        return 0;
+     */
 }
+
