@@ -1,30 +1,5 @@
 package Codility.Training.medium;
 
-import java.util.*;
-/*
-import java.util.*;
-class Solution {
-    public int[] solution(int N, int[] A) {
-        int[] arr = new int[N];
-
-        int valueMax = 0;
-        for(int i = 0; i < A.length; i++){
-            //System.out.println(A[i]);
-            if(A[i] > N){
-                //System.out.println("valueMax : " + valueMax);
-                Arrays.fill(arr, valueMax);
-            }else{
-                //System.out.println("A[i] - 1 : " + (A[i] - 1));
-                arr[A[i] - 1] = arr[A[i] - 1] + 1;
-                if(arr[A[i] - 1] >valueMax) valueMax = arr[A[i] - 1];
-            }
-
-        }
-
-        return arr;
-    }
-}
- */
 public class training1_MaxCounters {
 //score 100% 나옴 valueMax를 찾았을시 fill함수로 업데이트를 일괄로 하는게아니라 추후 찾아서 for 문을 한번 더 돌림
     class Solution {
