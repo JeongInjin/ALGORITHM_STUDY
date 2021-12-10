@@ -22,6 +22,8 @@ each element of array A is an integer within the range [−1,000,000..1,000,000]
 
 import java.util.*;
 //set 을 이용했다.
+//Detected time complexity:
+//O(N) or O(N * log(N))
 public class training1_MissingInteger {
     class Solution {
         public int solution(int[] A) {
