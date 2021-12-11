@@ -1,4 +1,4 @@
-package Study.b1;
+package Study.b1.찾기;
 
 import java.util.Random;
 /*

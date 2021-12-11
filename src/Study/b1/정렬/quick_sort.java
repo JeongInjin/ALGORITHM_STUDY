@@ -1,4 +1,4 @@
-package Study.b1;
+package Study.b1.정렬;
 
 import java.util.Arrays;
 

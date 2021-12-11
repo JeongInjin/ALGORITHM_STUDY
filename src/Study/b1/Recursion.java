@@ -15,10 +15,21 @@ public class Recursion {
 
     }
     //팩토리얼
+    //* 5 = 5 * 4 * 3 * 2 * 1 = 120.
     public static int factorial(int k){
         if(k == 0) return 1;
         else
             return k * factorial( k - 1);
+
+        //for문으로 팩토리얼
+        /*int result = 1;
+        if(startNumber == 1) return result;
+        else {
+            for(int i = 1; i <= startNumber; i++){
+                result = result * i;
+            }
+        }
+        return result;*/
 
     }
     //피보나치
