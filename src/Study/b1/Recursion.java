@@ -25,7 +25,7 @@ public class Recursion {
     //팩토리얼
     //* 5 = 5 * 4 * 3 * 2 * 1 = 120.
     public static int factorial(int k){
-        if(k == 0) return 1;
+        if(k == 1) return 1;
         else
             return k * factorial( k - 1);
         //for문으로 팩토리얼
