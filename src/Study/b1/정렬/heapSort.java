@@ -24,7 +24,7 @@ PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
         PriorityQueue<String> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
 */
 
-public class heapSort {
+public class             heapSort {
     public static void main(String[] args){
         int[] arr = {3,4,1,5,2}; // 테스트 값
         priorityHeapSort(arr); // PriorityQueue 를 이용한.
