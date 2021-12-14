@@ -1,7 +1,6 @@
 package LeetCode.Easy;
 
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 /*
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -34,6 +33,16 @@ Input: s = "{[]}"
 Output: true
  */
 public class easy20_ValidParentheses {
+    static HashSet<Character> mappingSet = new HashSet<>();
+    static HashMap<Character, Character> mappingMap = new HashMap<>();
+    static{
+        mappingSet.add('(');
+        mappingSet.add('{');
+        mappingSet.add('[');
+        mappingMap.put(')', '(');
+        mappingMap.put('}', '{' );
+        mappingMap.put(']', '[' );
+    }
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -41,7 +50,20 @@ public class easy20_ValidParentheses {
         //Solution solution = new Solution();
         System.out.println(Solution(s));
     }
-     static boolean Solution(String s) {
+    static boolean Solution(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        char[] c = s.toCharArray();
+
+        for(int i = 0; i < c.length; i++){
+            if(mappingSet.contains(c[i])) stack.push(c[i]);
+            else{
+                if(stack.isEmpty()) return false;
+
+                char compareChar = c[i];
+                if(stack.pop() != mappingMap.get(c[i])) return false;
+            }
+     /*static boolean Solution(String s) {
          Stack<Character> stack = new Stack<>();
 
          char[] c = s.toCharArray();
@@ -59,7 +81,7 @@ public class easy20_ValidParentheses {
                     }else if(compareChar == '}'){
                         if(stack.pop() != '{') return false;
                     }
-                }
+                }*/
 
          }
             return stack.isEmpty();
