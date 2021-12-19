@@ -1,5 +1,9 @@
 package BOJ.easy;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.TreeSet;
 /*
@@ -27,16 +31,35 @@ N개의 수가 주어졌을 때, 이를 오름차순으로 정렬하는 프로�
 5
  */
 public class 수정렬하기_2750 {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        // 1
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+
         int[] arr = new int[n];
-        for(int i = 0; i < arr.length; i++){
-            arr[i] = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
         }
-        for(int v : solution(arr)){
-            System.out.println(v);
+
+        Arrays.sort(arr);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            sb.append(arr[i]);
+            if(i != arr.length-1) sb.append("\n");
         }
+        System.out.println(sb.toString());
+
+
+        // 2
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int[] arr = new int[n];
+//        for(int i = 0; i < arr.length; i++){
+//            arr[i] = sc.nextInt();
+//        }
+//        for(int v : solution(arr)){
+//            System.out.println(v);
+//        }
     }
     public static TreeSet<Integer> solution(int[] arr){
         int[] result = new int[arr.length];
