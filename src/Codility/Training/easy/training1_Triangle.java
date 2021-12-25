@@ -9,7 +9,7 @@ public class training1_Triangle {
         for(int i = 0; i < A.length - 2; i++){
             if(A[i+1] > A[i+2] - A[i]) return 1;
         }
- ㄹ 
+
         return 0;
     }
 }
